@@ -1,18 +1,9 @@
-import React, { useEffect } from 'react';
+import React from "react";
 
 const ConsultarSensorData = ({ sensorData }) => {
-  useEffect(() => {
-    if (sensorData) {
-      const tableContainer = document.querySelector('.table-container');
-      if (tableContainer) {
-        tableContainer.classList.add('show');
-      }
-    }
-  }, [sensorData]);
-
   return (
     <div className="d-flex justify-content-center">
-      <div className="table-container">
+      <div className={`table-container ${sensorData ? "show" : ""}`}>
         {sensorData && (
           <div className="table-responsive">
             <table className="table table-striped table-hover table-sm custom-table">

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import ConsultarSensorData from './ConsultarSensorData';
-import EnviarSensorData from './EnviarSensorData';
-import { AquaTic_backend } from 'declarations/AquaTic_backend';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import ConsultarSensorData from "./ConsultarSensorData";
+import EnviarSensorData from "./EnviarSensorData";
+import { AquaTic_backend } from "declarations/AquaTic_backend";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [sensorData, setSensorData] = useState(null);
@@ -34,11 +34,16 @@ const Home = () => {
             <button className="btn btn-primary" onClick={fetchData}>
               Obtener Datos
             </button>
-            <button className="btn btn-secondary ml-2" onClick={() => navigate('/graficas')}>
+            <button
+              className="btn btn-secondary ml-2"
+              onClick={() => navigate("/graficas")}
+            >
               Ver Gráficas
             </button>
           </div>
-          {loading && <div className="spinner-container">Consultando información...</div>}
+          {loading && (
+            <div className="spinner-container">Consultando información...</div>
+          )}
           {error && <p className="text-danger mt-3">{error}</p>}
           <ConsultarSensorData sensorData={sensorData} />
         </div>

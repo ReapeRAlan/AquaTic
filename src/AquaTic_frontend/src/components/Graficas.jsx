@@ -1,7 +1,7 @@
 // src/components/Graficas.jsx
-import React, { useEffect, useState } from 'react';
-import { Line } from 'react-chartjs-2';
-import { AquaTic_backend } from 'declarations/AquaTic_backend';
+import React, { useEffect, useState } from "react";
+import { Line } from "react-chartjs-2";
+import { AquaTic_backend } from "declarations/AquaTic_backend";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,7 +12,7 @@ import {
   Tooltip,
   Legend,
   Filler,
-} from 'chart.js';
+} from "chart.js";
 
 ChartJS.register(
   CategoryScale,
@@ -22,7 +22,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Filler
+  Filler,
 );
 
 const Graficas = () => {
@@ -46,13 +46,13 @@ const Graficas = () => {
 
   const processData = (data, key, label) => {
     return {
-      labels: data.map(item => item.created_at),
+      labels: data.map((item) => item.created_at),
       datasets: [
         {
           label: label || key,
-          data: data.map(item => item[key]),
-          borderColor: 'rgba(75,192,192,1)',
-          backgroundColor: 'rgba(75,192,192,0.2)',
+          data: data.map((item) => item[key]),
+          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "rgba(75,192,192,0.2)",
           fill: true,
           tension: 0.4, // Make the lines curved
         },
@@ -76,15 +76,21 @@ const Graficas = () => {
         <div className="charts-grid">
           <div className="chart-item">
             <h2>Temperatura</h2>
-            <Line data={processData(sensorData, 'oxigeno', 'Temperatura')} options={chartOptions} />
+            <Line
+              data={processData(sensorData, "oxigeno", "Temperatura")}
+              options={chartOptions}
+            />
           </div>
           <div className="chart-item">
             <h2>PH</h2>
-            <Line data={processData(sensorData, 'ph')} options={chartOptions} />
+            <Line data={processData(sensorData, "ph")} options={chartOptions} />
           </div>
           <div className="chart-item">
             <h2>TDS</h2>
-            <Line data={processData(sensorData, 'tds')} options={chartOptions} />
+            <Line
+              data={processData(sensorData, "tds")}
+              options={chartOptions}
+            />
           </div>
         </div>
       )}
