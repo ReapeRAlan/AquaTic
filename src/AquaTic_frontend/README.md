@@ -10,7 +10,7 @@ This is the frontend portion of the AquaTic project. It's a single-page applicat
 ## Scripts
 
 *   `npm run start`: Starts the local development server using Vite.
-*   `npm run build`: Compiles TypeScript and builds the production-ready assets into a `dist/` directory.
+*   `npm run build`: Runs the `prebuild` step (`dfx generate`) and then compiles TypeScript to build the production-ready assets into a `dist/` directory. This requires the `dfx` CLI to be installed and a canister to be set up so that code generation can succeed.
 *   `npm run format`: Formats code using Prettier.
 
 ## Technologies
