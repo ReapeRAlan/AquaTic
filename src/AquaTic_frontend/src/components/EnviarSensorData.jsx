@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { AquaTic_backend } from 'declarations/AquaTic_backend';
+import React, { useState } from "react";
+import { AquaTic_backend } from "declarations/AquaTic_backend";
 
 const EnviarSensorData = () => {
-  const [tds, setTds] = useState('');
-  const [ph, setPh] = useState('');
-  const [temperatura, setTemperatura] = useState(''); // Mostrar y solicitar como Temperatura
+  const [tds, setTds] = useState("");
+  const [ph, setPh] = useState("");
+  const [temperatura, setTemperatura] = useState(""); // Mostrar y solicitar como Temperatura
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'tds') setTds(value);
-    if (name === 'ph') setPh(value);
-    if (name === 'temperatura') setTemperatura(value); // Mostrar y solicitar como Temperatura
+    if (name === "tds") setTds(value);
+    if (name === "ph") setPh(value);
+    if (name === "temperatura") setTemperatura(value); // Mostrar y solicitar como Temperatura
   };
 
   const sendData = async (e) => {
@@ -62,7 +62,8 @@ const EnviarSensorData = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="temperatura">Temperatura</label> {/* Mostrar como Temperatura */}
+          <label htmlFor="temperatura">Temperatura</label>{" "}
+          {/* Mostrar como Temperatura */}
           <input
             type="number"
             className="form-control"
@@ -78,7 +79,9 @@ const EnviarSensorData = () => {
           Enviar Datos
         </button>
       </form>
-      {response && <pre className="mt-3">{JSON.stringify(response, null, 2)}</pre>}
+      {response && (
+        <pre className="mt-3">{JSON.stringify(response, null, 2)}</pre>
+      )}
       {error && <p className="text-danger mt-3">{error}</p>}
     </div>
   );

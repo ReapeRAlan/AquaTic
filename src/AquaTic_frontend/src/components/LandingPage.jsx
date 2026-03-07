@@ -1,8 +1,8 @@
 // src/components/LandingPage.jsx
-import React from 'react';
-import { ConnectButton, ConnectDialog, useConnect } from '@connect2ic/react';
-import '@connect2ic/core/style.css';
-import logo from '/NovaPal.png';
+import React from "react";
+import { ConnectButton, ConnectDialog, useConnect } from "@connect2ic/react";
+import "@connect2ic/core/style.css";
+import logo from "/NovaPal.png";
 
 const LandingPage = ({ onEnter }) => {
   const { isConnected } = useConnect();
